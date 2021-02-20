@@ -1,6 +1,9 @@
-site_name: My Docs
+site_name: wt-wiki
 nav:
     - Home: index.md
     - First: first.md
+    - Documents:
+        - Usage: usage.md
+        - Tutorial: tutorial.md
 theme:
   name: 'material'
