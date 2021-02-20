@@ -10,6 +10,8 @@ Ctrl+Shift+上下键   上下移动代码
 
 Alt+O .h和.cpp切换
 
+![VS](images\VS.png)
+
 
 
 ### Typroa
