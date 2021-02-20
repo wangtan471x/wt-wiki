@@ -2,6 +2,7 @@ site_name: wt-wiki
 nav:
     - Home: index.md
     - First: first.md
+    - 常用快捷键: tools.md
     - Documents:
         - Usage: usage.md
         - Tutorial: tutorial.md
