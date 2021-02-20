@@ -16,7 +16,7 @@ Alt+O .h和.cpp切换
 
 ### Typroa
 
-参考网页：https://blog.csdn.net/fan521dan/article/details/89737140
+[参考网页](https://blog.csdn.net/fan521dan/article/details/89737140)
 标题 1~6
 开头#的个数表示，空格+文字。标题有1~6个级别，#表示开始，按换行键结束
 
@@ -107,9 +107,11 @@ git pull
 
 ### MkDocs
 
-https://zhuanlan.zhihu.com/p/61492480
+[环境设置](https://zhuanlan.zhihu.com/p/61492480)
 
-中文使用：https://markdown-docs-zh.readthedocs.io/zh_CN/latest/
+[中文使用](https://markdown-docs-zh.readthedocs.io/zh_CN/latest/)
+
+[中文应用](https://mkdocs.zimoapps.com/)
 
 wt-wiki
 
@@ -125,5 +127,5 @@ mkdocs serve
    1. 将Mardown文件转为静态HTML网页文件
    2. 将所有的静态HTML网页文件都推送到远程仓库的gh-pages分支
 
-士大夫
+5. XXX
 

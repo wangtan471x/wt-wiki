@@ -6,5 +6,8 @@ nav:
     - Documents:
         - Usage: usage.md
         - Tutorial: tutorial.md
+    - 编程:
+        - Qt: Qt-Qml.md
+        - Tutorial: tutorial.md
 theme:
   name: 'material'
