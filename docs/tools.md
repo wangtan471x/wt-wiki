@@ -93,6 +93,12 @@ git pull
 
 
 
+**git status中文乱码**
+
+git config --global core.quotepath false
+
+
+
 ### VSCode
 
 1. 括号匹配 **Windows** Ctrl + Shift+\
