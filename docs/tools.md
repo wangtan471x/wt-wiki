@@ -132,6 +132,27 @@ mkdocs serve
 4. 部署站点到git上 mkdocs gh-deploy
    1. 将Mardown文件转为静态HTML网页文件
    2. 将所有的静态HTML网页文件都推送到远程仓库的gh-pages分支
+5. 指定端口 mkdocs serve --dev-addr=0.0.0.0:8001
 
-5. XXX
 
+
+### python
+
+pip安装时会下载失败，报错信息：
+
+During handling of the above exception, another exception occurred:
+
+这是由于频繁访问网站或请求造成的，可以通过更换国内源的方法来解决此问题。示例如下：
+
+> pip install scrapy -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+
+其中-i指向要更换的国内源。
+–trusted-host也是有必要的，否则会因为douban.com不被信任而报错。
+
+最后附上pip国内的一些镜像：
+
+中国科技大学 https://pypi.mirrors.ustc.edu.cn/simple/
+清华大学 https://pypi.tuna.tsinghua.edu.cn/simple/
+阿里云 http://mirrors.aliyun.com/pypi/simple/
+中国科学技术大学 http://pypi.mirrors.ustc.edu.cn/simple/
+豆瓣(douban) http://pypi.douban.com/simple/
