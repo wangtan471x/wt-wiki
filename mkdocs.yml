@@ -9,5 +9,7 @@ nav:
     - 编程:
         - Qt: Qt-Qml.md
         - Tutorial: tutorial.md
+    - 视频课程: 
+        - 马士兵: video/mashibing.md
 theme:
   name: 'material'

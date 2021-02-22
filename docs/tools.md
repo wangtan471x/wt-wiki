@@ -93,9 +93,20 @@ git pull
 
 
 
-**git status中文乱码**
+#### **git status中文乱码**
 
 git config --global core.quotepath false
+
+
+
+#### git 生成ssh锁
+
+		1. 设置名称 git config --global user.name "yangjianliang"
+  		2. 设置邮箱 git config --global user.email "526861348@qq.com"
+  		3. 生成密钥 ssh-keygen -t rsa -C "526861348@qq.com"，按3次回车
+  		4. 查看公钥 cat ~/.ssh/id_rsa.pub
+
+
 
 
 
