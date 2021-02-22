@@ -102,11 +102,179 @@ git config --global core.quotepath false
 #### git 生成ssh锁
 
 		1. 设置名称 git config --global user.name "yangjianliang"
-  		2. 设置邮箱 git config --global user.email "526861348@qq.com"
-  		3. 生成密钥 ssh-keygen -t rsa -C "526861348@qq.com"，按3次回车
-  		4. 查看公钥 cat ~/.ssh/id_rsa.pub
+		2. 设置邮箱 git config --global user.email "526861348@qq.com"
+		3. 生成密钥 ssh-keygen -t rsa -C "526861348@qq.com"，按3次回车
+		4. 查看公钥 cat ~/.ssh/id_rsa.pub
 
+#### git其他补充
 
+```
+1、初始化版本库
+git init
+
+2、查看配置
+git config -l
+
+3、添加配置（只是标识，和gitee账号没关系）
+git config --global user.name 'king'
+git config --global user.email '222@qq.com'
+查看配置
+git config --list
+
+4、本地文件配置路径
+.git/config
+当前用户目录/.gitconfig
+git安装目录/etc/gitconfig
+
+5、添加到缓存
+Git add
+. 把新增的文件、修改的文件都加入缓存库
+-A 新增的文件、修改的文件、删除的文件都加入缓存库
+
+6、提交到本地库
+git commmit -m '备注信息'
+git commit -am '备注信息'  -一步提交到本地库
+git commit -a -m '提交'
+
+7、github使用
+创建版本库
+本地git与github建立连接 https/ssh (https：会弹出账号密码、ssh：公钥和私钥)
+git remote add <shortname> <url>
+https：添加远程库：git remote add XXX https://XXX.git 
+查看详细信息：git remote -v
+文件推送：git push -u XXX master
+ssh：git remote add en-ssh XXX.git
+文件推送：git push -u XXX master
+clone来的仓库，默认都有一个源origin
+git remote show origin
+移除远程仓库：git remote rm origin
+
+8、忽略和排除
+目录下建立一个.gitignore文件（可以有多个，影响范围当前文件及子文件）
+要在命令行中创建，window不支持创建
+touch .gitignore
+
+9、克隆：将整个版本的信息都拉取下来了
+git clone git地址 本地文件夹名
+git clone xxxxxx.git enjoy-git
+
+10、ssh
+ssh-kengen -t rsa -C XXX@qq.com 在 c/users/administrator/.ssh/id_rsa
+
+11、将远程主机中的最新内容拉到本地
+git fetch en-https master 不进行合并（只放到了仓库里）
+git merge origin/master
+
+git pull en-https master 自动合并
+如果本地有数据，pull会报错，要加--allow-unrelated-histories
+
+12、分支
+git checkout master (切换到主分支)
+
+13、rebase
+
+14、查看分支 git branch *是选中的分支
+king
+*master
+rebasing
+
+15、日志
+git log
+git log --oneline
+git log --oneline --graph
+
+16、Git工作流程
+从远程仓库克隆代码到本地仓库
+从本地仓库中checkout代码然后进行修改
+提交前先提交到缓存区
+提交到本地仓库
+push到远程仓库
+
+17、查看git状态
+git status
+git status -s
+
+18、删除文件
+git rm xxx
+git commit -m 'XXXX'
+如果是手动删除，要先加到暂存区
+
+19、远程抓取
+
+20、远程推送(把本地的master推送到远程master)
+git push origin master
+
+====分支========
+列出所有本地分支
+git branch
+列出所有远程分支
+git branch -r
+列出所有本地和远程分支
+git branch -a
+
+创建分支
+git branch 分支名
+
+切换分支
+git checkout 分支名
+
+推送分支
+git push origin 分支名
+
+分支合并（在要合并的分支中执行，比如从开发分支合并到主分支，就要切换到主分支）
+git merge dev
+当文件冲突时，我们要编辑冲突的文件，然后用git add来标识冲突已解决
+git add XX
+git commit -am
+
+删除分支（要先切换到其他分支）
+git branch -d b1(如果删除的分支进行了一些开发，此时执行删除是不能成功的，如果要强制删除，将-d修改成-D)
+删除远程分支的命令：
+git push origin -d branchName
+
+===git====使用====
+1、切换到待修复的版本
+2、创建修复分支
+3、切换修复分支
+4、修改问题
+5、切换待修复分支
+6、merge
+7、push
+8、切换工作分支
+
+===git标签=======
+列出已有的标签
+git tag
+查看标签
+git show 【tag】
+创建标签
+git tag 【tagName】
+远程推送标签
+git push prigin v0.1
+检出标签
+git checkout -b [branch] [tag]
+删除本地标签
+git tag -d [tag]
+删除远程tag
+git push origin :refs/tags/[tag]
+```
+
+#### gitignore文件配置
+
+```
+# no .a files
+*.a
+# 不需要忽略的文件
+!lib.a
+# 忽略文件夹
+/TODO
+#指定文件夹下的
+build/
+#指定文件类型
+doc/*.txt
+#指定文件夹下的文件
+doc/**/*.pdf
+```
 
 
 
