@@ -252,6 +252,26 @@
     Git
   </a>
   
+    <nav class="md-nav" aria-label="Git">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-status" class="md-nav__link">
+    git status中文乱码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-ssh" class="md-nav__link">
+    git 生成ssh锁
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -393,6 +413,49 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" >
+      
+      <label class="md-nav__link" for="nav-6">
+        视频课程
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="视频课程" data-md-level="1">
+        <label class="md-nav__title" for="nav-6">
+          <span class="md-nav__icon md-icon"></span>
+          视频课程
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../video/mashibing/" class="md-nav__link">
+        马士兵
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -440,6 +503,26 @@
   <a href="#git" class="md-nav__link">
     Git
   </a>
+  
+    <nav class="md-nav" aria-label="Git">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-status" class="md-nav__link">
+    git status中文乱码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-ssh" class="md-nav__link">
+    git 生成ssh锁
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -539,8 +622,14 @@ git push 将master分支代码推到远程，因为远程上有master分支，�
 <p>git fetch --all </p>
 <p>git reset --hard origin/master </p>
 <p>git pull</p>
-<p><strong>git status中文乱码</strong></p>
+<h4 id="git-status"><strong>git status中文乱码</strong></h4>
 <p>git config --global core.quotepath false</p>
+<h4 id="git-ssh">git 生成ssh锁</h4>
+<pre><code>    1. 设置名称 git config --global user.name "yangjianliang"
+    2. 设置邮箱 git config --global user.email "526861348@qq.com"
+    3. 生成密钥 ssh-keygen -t rsa -C "526861348@qq.com"，按3次回车
+    4. 查看公钥 cat ~/.ssh/id_rsa.pub
+</code></pre>
 <h3 id="vscode">VSCode</h3>
 <ol>
 <li>
