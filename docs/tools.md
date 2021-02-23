@@ -276,6 +276,14 @@ doc/*.txt
 doc/**/*.pdf
 ```
 
+查看远程库的信息
+
+```
+$ git remote -v
+origin  https://gitee.com/wtcgsys/git_demo.git (fetch)
+origin  https://gitee.com/wtcgsys/git_demo.git (push)
+```
+
 
 
 ### VSCode
@@ -289,6 +297,8 @@ doc/**/*.pdf
    ```
 
 3. 删除指定行 ctrl+shift+k
+
+4. 实用插件 [https://www.cnblogs.com/joe235/p/13267973.html](https://www.cnblogs.com/joe235/p/13267973.html)
 
 ### MkDocs
 
