@@ -7,8 +7,10 @@ nav:
         - Usage: usage.md
         - Tutorial: tutorial.md
     - 编程:
-        - Qt: Qt-Qml.md
-        - Tutorial: tutorial.md
+        - Qt: program/Qt-Qml.md
+        - Python: program/python.md
+        - Leetcode: program/Leetcode.md
+        - Pyside2: program/pyside2.md
     - 视频课程: 
         - 马士兵: video/mashibing.md
 theme:
