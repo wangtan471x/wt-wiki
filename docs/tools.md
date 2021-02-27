@@ -363,3 +363,6 @@ Python中注释代码是在前面加 #
 如果我们后来又要取消注释，只需再次 按 Ctrl + 斜杠/ 就可以取消注释了。
 
 ### GitLab
+
+ubuntu安装gitlab：[https://www.cnblogs.com/shawWey/p/12020637.html](https://www.cnblogs.com/shawWey/p/12020637.html)
+
