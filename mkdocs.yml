@@ -2,7 +2,7 @@ site_name: wt-wiki
 nav:
     - Home: index.md
     - First: first.md
-    - 开发工具使用: tools.md
+    - IDE: tools.md
     - Documents:
         - Usage: usage.md
         - Tutorial: tutorial.md
@@ -11,7 +11,10 @@ nav:
         - Python: program/python.md
         - Leetcode: program/Leetcode.md
         - Pyside2: program/pyside2.md
+        - SQL: program/sql.md
     - 视频课程: 
         - 马士兵: video/mashibing.md
+    - 办公: 
+        - 电波模型: work/radio.md
 theme:
   name: 'material'

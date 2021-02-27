@@ -345,3 +345,21 @@ During handling of the above exception, another exception occurred:
 阿里云 http://mirrors.aliyun.com/pypi/simple/
 中国科学技术大学 http://pypi.mirrors.ustc.edu.cn/simple/
 豆瓣(douban) http://pypi.douban.com/simple/
+
+### PyCharm
+
+1. Ctrl + Shift + I 三个键，就会弹出信息框，显示它们的定义
+
+2. 我们可以 额外的添加目录，作为 Pycharm 的模块搜索路径。
+
+方法就是 右键点击 要添加的目录，在弹出的菜单中 选择 Mark Directory as -> Source Root
+
+3. 代码注释
+
+Python中注释代码是在前面加 #
+
+有时，我们需用注释掉大量的代码，这时候，就可以选中这些代码，按 Ctrl + 斜杠/ 就可以注释他们了。不需要我们一个个的在每行前面加 #号
+
+如果我们后来又要取消注释，只需再次 按 Ctrl + 斜杠/ 就可以取消注释了。
+
+### GitLab
