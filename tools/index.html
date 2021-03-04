@@ -471,6 +471,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../program/TensorFlow/" class="md-nav__link">
+        TensorFlow
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -1002,6 +1014,17 @@ mkdocs serve
 <p>有时，我们需用注释掉大量的代码，这时候，就可以选中这些代码，按 Ctrl + 斜杠/ 就可以注释他们了。不需要我们一个个的在每行前面加 #号</p>
 <p>如果我们后来又要取消注释，只需再次 按 Ctrl + 斜杠/ 就可以取消注释了。</p>
 <h3 id="gitlab">GitLab</h3>
+<p>ubuntu安装gitlab：<a href="https://www.cnblogs.com/shawWey/p/12020637.html">https://www.cnblogs.com/shawWey/p/12020637.html</a></p>
+<p>修改root账号：</p>
+<ol>
+<li>cd /opt/gitlab/bin/</li>
+<li>sudo gitlab-rails console -e production</li>
+<li>user = User.where(id: 1).first</li>
+<li>user.password = 'XXX'</li>
+<li>user.password_confirmation = 'wt102488'</li>
+<li>user.save!</li>
+<li>exit</li>
+</ol>
                 
               
               

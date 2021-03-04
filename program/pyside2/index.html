@@ -363,6 +363,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pythonqml" class="md-nav__link">
+    Python操作qml对象
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -378,6 +385,18 @@
     <li class="md-nav__item">
       <a href="../sql/" class="md-nav__link">
         SQL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TensorFlow/" class="md-nav__link">
+        TensorFlow
       </a>
     </li>
   
@@ -504,6 +523,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pythonqml" class="md-nav__link">
+    Python操作qml对象
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -523,6 +549,46 @@
 <ol>
 <li><a href="https://blog.csdn.net/luoyayun361/article/details/82935420">Qt for Python之 PySide2+QML 入门示例</a></li>
 <li><a href="http://www.python3.vip/">白月黑羽教Python</a></li>
+<li>Digitser <a href="http://pyside.digitser.net/5.15/zh-CN/PySide2/QtWidgets/QPushButton.html">http://pyside.digitser.net/5.15/zh-CN/PySide2/QtWidgets/QPushButton.html</a></li>
+<li>Qt论坛 <a href="http://www.qtcn.org/bbs/i.php">http://www.qtcn.org/bbs/i.php</a></li>
+<li>
+<p>PyQt (PySide) 与 QML 互操作 - PyQt, QML ListView, model, QAbstractListModel<a href="https://blog.csdn.net/likianta/article/details/105820227">https://blog.csdn.net/likianta/article/details/105820227</a></p>
+</li>
+<li>
+<p>如何将python和qml与pyside2连接起来?<a href="http://ask.sov5.cn/q/4q5a0ekhsG">http://ask.sov5.cn/q/4q5a0ekhsG</a></p>
+</li>
+</ol>
+<h3 id="pythonqml">Python操作qml对象</h3>
+<p>参考网站：<a href="https://blog.csdn.net/weixin_30312557/article/details/102067204">https://blog.csdn.net/weixin_30312557/article/details/102067204</a></p>
+<ol>
+<li>如何在python里获得qml里的对象？
+  1.1 获取根对象（Python）</li>
+</ol>
+<p>使用QQmlApplicationEngine类的rootObjects方法，返回的是一个列表，取索引0即是根对象。</p>
+<p><code>python
+  engine = QQmlApplicationEngine()
+  engine.load('qml-test.qml')
+  root_obj = engine.rootObjects()[0]</code></p>
+<p>这样就会获得id为window的ApplicationWindow对象。</p>
+<p>1.2 获取任意对象</p>
+<p>需要在qml文件中加入objecName属性！</p>
+<p><code>python
+  engine = QQmlApplicationEngine()
+  engine.load('qml-test.qml')
+  txt_obj = engine.rootObjects()[0].findChild(QObject, "txt")</code></p>
+<ol>
+<li>如何在python里读取和设置qml对象的属性和值？</li>
+</ol>
+<p>2.1 读取对象的属性(如Text对象)
+  首先通过 findChild 获取Text对象（注意 txt 是qml文件里的 objectName）：</p>
+<p>txt_obj = engine.rootObjects()[0].findChild(QObject, "txt")
+  然后获取Text对象的text属性（使用 property）：</p>
+<p>txt_value = txt_obj.property("text")
+  2.2 设置对象的属性
+  使用setProperty方法可以更改对象的属性值。</p>
+<p>txt_obj.setProperty("text", "Clicked!")</p>
+<ol>
+<li></li>
 </ol>
                 
               
