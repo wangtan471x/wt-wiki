@@ -284,6 +284,42 @@ origin  https://gitee.com/wtcgsys/git_demo.git (fetch)
 origin  https://gitee.com/wtcgsys/git_demo.git (push)
 ```
 
+#### git--合作开发中使用技巧
+
+1. 创建分支other,切换到other分支
+
+```
+git branch other
+git checkout other
+```
+
+2. 分支修改完成后提交
+
+```git
+git add ./xxx/
+git commit -m"xxx"
+```
+
+3. other分支完成，切换回master
+
+```
+git checkout master
+```
+
+此时，master分支上并没有other的文件，因为分支还没有合并
+
+4. 合并分支
+
+```
+git merge other
+```
+
+5. 删除other分支
+
+```
+git branch -d other
+```
+
 
 
 ### VSCode
