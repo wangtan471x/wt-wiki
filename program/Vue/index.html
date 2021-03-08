@@ -468,6 +468,76 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#vuejs" class="md-nav__link">
+    Vue.js的模板语法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computed-vs-methods" class="md-nav__link">
+    computed vs methods
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vuejs_1" class="md-nav__link">
+    Vue.js 监听属性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    事件修饰符
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v-model" class="md-nav__link">
+    v-model修饰符
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    组件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vuejs-" class="md-nav__link">
+    Vue.js 组件 - 自定义事件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vuejs_2" class="md-nav__link">
+    Vue.js 自定义指令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    钩子
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vuejs_3" class="md-nav__link">
+    vue.js路由
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -536,6 +606,380 @@ vm.$on( event, fn );//监听event事件后运行 fn； </p>
 &lt;/script&gt;
 —父组件
 原文链接：https://blog.csdn.net/sllailcp/article/details/78595077
+</code></pre>
+<p>除了数据属性，Vue 实例还提供了一些有用的实例属性与方法。它们都有前缀 $，以便与用户定义的属性区分开来。</p>
+<h3 id="vuejs">Vue.js的模板语法</h3>
+<pre><code class="language-vue">数据绑定最常见的形式就是使用 {{...}}（双大括号）的文本插值：
+1、文本插值
+&lt;div id=&quot;app&quot;&gt;
+  &lt;p&gt;{{ message }}&lt;/p&gt;
+&lt;/div&gt;
+
+2、使用 v-html 指令用于输出 html 代码：
+v-html 指令
+&lt;div id=&quot;app&quot;&gt;
+    &lt;div v-html=&quot;message&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+new Vue({
+  el: '#app',
+  data: {
+    message: '&lt;h1&gt;菜鸟教程&lt;/h1&gt;'
+  }
+})
+&lt;/script&gt;
+
+3、HTML 属性中的值应使用 v-bind 指令。
+以下实例判断 use 的值，如果为 true 使用 class1 类的样式，否则不使用该类：
+v-bind 指令
+&lt;div id=&quot;app&quot;&gt;
+  &lt;label for=&quot;r1&quot;&gt;修改颜色&lt;/label&gt;&lt;input type=&quot;checkbox&quot; v-model=&quot;use&quot; id=&quot;r1&quot;&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;div v-bind:class=&quot;{'class1': use}&quot;&gt;
+    v-bind:class 指令
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+new Vue({
+    el: '#app',
+  data:{
+      use: false
+  }
+});
+&lt;/script&gt;
+
+4、Vue.js 都提供了完全的 JavaScript 表达式支持。
+JavaScript 表达式
+&lt;div id=&quot;app&quot;&gt;
+    {{5+5}}&lt;br&gt;
+    {{ ok ? 'YES' : 'NO' }}&lt;br&gt;
+    {{ message.split('').reverse().join('') }}
+    &lt;div v-bind:id=&quot;'list-' + id&quot;&gt;菜鸟教程&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+new Vue({
+  el: '#app',
+  data: {
+    ok: true,
+    message: 'RUNOOB',
+    id : 1
+  }
+})
+&lt;/script&gt;
+
+指令是带有 v- 前缀的特殊属性。
+
+5、指令用于在表达式的值改变时，将某些行为应用到 DOM 上。如下例子：
+实例
+&lt;div id=&quot;app&quot;&gt;
+    &lt;p v-if=&quot;seen&quot;&gt;现在你看到我了&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+new Vue({
+  el: '#app',
+  data: {
+    seen: true
+  }
+})
+&lt;/script&gt;
+
+6、参数在指令后以冒号指明。例如， v-bind 指令被用来响应地更新 HTML 属性：
+实例
+&lt;div id=&quot;app&quot;&gt;
+    &lt;pre&gt;&lt;a v-bind:href=&quot;url&quot;&gt;菜鸟教程&lt;/a&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;script&gt;
+new Vue({
+  el: '#app',
+  data: {
+    url: 'http://www.runoob.com'
+  }
+})
+&lt;/script&gt;
+在这里 href 是参数，告知 v-bind 指令将该元素的 href 属性与表达式 url 的值绑定。
+
+7、另一个例子是 v-on 指令，它用于监听 DOM 事件：
+&lt;a v-on:click=&quot;doSomething&quot;&gt;
+在这里参数是监听的事件名。
+
+8、修饰符是以半角句号 . 指明的特殊后缀，用于指出一个指令应该以特殊方式绑定。例如，.prevent 修饰符告诉 v-on 指令对于触发的事件调用 event.preventDefault()：
+&lt;form v-on:submit.prevent=&quot;onSubmit&quot;&gt;&lt;/form&gt;
+
+9、在 input 输入框中我们可以使用 v-model 指令来实现双向数据绑定：
+双向数据绑定
+&lt;div id=&quot;app&quot;&gt;
+    &lt;p&gt;{{ message }}&lt;/p&gt;
+    &lt;input v-model=&quot;message&quot;&gt;
+&lt;/div&gt;
+&lt;script&gt;
+new Vue({
+  el: '#app',
+  data: {
+    message: 'Runoob!'
+  }
+})
+&lt;/script&gt;
+
+10、Vue.js 允许你自定义过滤器，被用作一些常见的文本格式化。由&quot;管道符&quot;指示, 格式如下：
+&lt;!-- 在两个大括号中 --&gt;
+{{ message | capitalize }}
+&lt;!-- 在 v-bind 指令中 --&gt;
+&lt;div v-bind:id=&quot;rawId | formatId&quot;&gt;&lt;/div&gt;
+
+11、v-bind 缩写
+Vue.js 为两个最为常用的指令提供了特别的缩写：
+&lt;!-- 完整语法 --&gt;
+&lt;a v-bind:href=&quot;url&quot;&gt;&lt;/a&gt;
+&lt;!-- 缩写 --&gt;
+&lt;a :href=&quot;url&quot;&gt;&lt;/a&gt;
+
+12、v-on 缩写
+&lt;!-- 完整语法 --&gt;
+&lt;a v-on:click=&quot;doSomething&quot;&gt;&lt;/a&gt;
+&lt;!-- 缩写 --&gt;
+&lt;a @click=&quot;doSomething&quot;&gt;&lt;/a&gt;
+
+13、我们也可以使用 v-show 指令来根据条件展示元素：
+v-show 指令
+&lt;h1 v-show=&quot;ok&quot;&gt;Hello!&lt;/h1&gt;
+
+14、v-for 也可以循环整数
+v-for
+&lt;div id=&quot;app&quot;&gt;
+  &lt;ul&gt;
+    &lt;li v-for=&quot;n in 10&quot;&gt;
+     {{ n }}
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="computed-vs-methods">computed vs methods</h3>
+<p>我们可以使用 methods 来替代 computed，效果上两个都是一样的，但是 computed 是基于它的依赖缓存，只有相关依赖发生改变时才会重新取值。而使用 methods ，在重新渲染的时候，函数总会重新调用执行。</p>
+<h3 id="vuejs_1">Vue.js 监听属性</h3>
+<pre><code class="language-vue">以下实例通过使用 watch 实现计数器：
+实例
+&lt;div id = &quot;app&quot;&gt;
+    &lt;p style = &quot;font-size:25px;&quot;&gt;计数器: {{ counter }}&lt;/p&gt;
+    &lt;button @click = &quot;counter++&quot; style = &quot;font-size:25px;&quot;&gt;点我&lt;/button&gt;
+&lt;/div&gt;
+&lt;script type = &quot;text/javascript&quot;&gt;
+var vm = new Vue({
+    el: '#app',
+    data: {
+        counter: 1
+    }
+});
+vm.$watch('counter', function(nval, oval) {
+    alert('计数器值的变化 :' + oval + ' 变为 ' + nval + '!');
+});
+&lt;/script&gt;
+</code></pre>
+<h3 id="_1">事件修饰符</h3>
+<pre><code class="language-vue">Vue.js 为 v-on 提供了事件修饰符来处理 DOM 事件细节，如：event.preventDefault() 或 event.stopPropagation()。
+Vue.js 通过由点 . 表示的指令后缀来调用修饰符。
+.stop - 阻止冒泡
+.prevent - 阻止默认事件
+.capture - 阻止捕获
+.self - 只监听触发该元素的事件
+.once - 只触发一次
+.left - 左键事件
+.right - 右键事件
+.middle - 中间滚轮事件
+&lt;!-- 阻止单击事件冒泡 --&gt;
+&lt;a v-on:click.stop=&quot;doThis&quot;&gt;&lt;/a&gt;
+&lt;!-- 提交事件不再重载页面 --&gt;
+&lt;form v-on:submit.prevent=&quot;onSubmit&quot;&gt;&lt;/form&gt;
+&lt;!-- 修饰符可以串联  --&gt;
+&lt;a v-on:click.stop.prevent=&quot;doThat&quot;&gt;&lt;/a&gt;
+&lt;!-- 只有修饰符 --&gt;
+&lt;form v-on:submit.prevent&gt;&lt;/form&gt;
+&lt;!-- 添加事件侦听器时使用事件捕获模式 --&gt;
+&lt;div v-on:click.capture=&quot;doThis&quot;&gt;...&lt;/div&gt;
+&lt;!-- 只当事件在该元素本身（而不是子元素）触发时触发回调 --&gt;
+&lt;div v-on:click.self=&quot;doThat&quot;&gt;...&lt;/div&gt;
+&lt;!-- click 事件只能点击一次，2.1.4版本新增 --&gt;
+&lt;a v-on:click.once=&quot;doThis&quot;&gt;&lt;/a&gt;
+</code></pre>
+<h3 id="v-model">v-model修饰符</h3>
+<pre><code class="language-vue">.lazy
+在默认情况下， v-model 在 input 事件中同步输入框的值与数据，但你可以添加一个修饰符 lazy ，从而转变为在 change 事件中同步：
+&lt;!-- 在 &quot;change&quot; 而不是 &quot;input&quot; 事件中更新 --&gt;
+&lt;input v-model.lazy=&quot;msg&quot; &gt;
+
+.number
+如果想自动将用户的输入值转为 Number 类型（如果原值的转换结果为 NaN 则返回原值），可以添加一个修饰符 number 给 v-model 来处理输入值：
+&lt;input v-model.number=&quot;age&quot; type=&quot;number&quot;&gt;
+这通常很有用，因为在 type=&quot;number&quot; 时 HTML 中输入的值也总是会返回字符串类型。
+
+.trim
+如果要自动过滤用户输入的首尾空格，可以添加 trim 修饰符到 v-model 上过滤输入：
+&lt;input v-model.trim=&quot;msg&quot;&gt;
+</code></pre>
+<h3 id="_2">组件</h3>
+<pre><code class="language-vue">1、注册一个全局组件语法格式如下：
+Vue.component(tagName, options)
+tagName 为组件名，options 为配置选项。注册后，我们可以使用以下方式来调用组件：
+&lt;tagName&gt;&lt;/tagName&gt;
+
+2、我们也可以在实例选项中注册局部组件，这样组件只能在这个实例中使用：
+局部组件实例
+注册一个简单的局部组件 runoob，并使用它：
+&lt;div id=&quot;app&quot;&gt;
+    &lt;runoob&gt;&lt;/runoob&gt;
+&lt;/div&gt;
+&lt;script&gt;
+var Child = {
+  template: '&lt;h1&gt;自定义组件!&lt;/h1&gt;'
+}
+// 创建根实例
+new Vue({
+  el: '#app',
+  components: {
+    // &lt;runoob&gt; 将只在父模板可用
+    'runoob': Child
+  }
+})
+&lt;/script&gt;
+</code></pre>
+<h3 id="vuejs-">Vue.js 组件 - 自定义事件</h3>
+<pre><code>父组件是使用 props 传递数据给子组件，但如果子组件要把数据传递回去，就需要使用自定义事件！
+我们可以使用 v-on 绑定自定义事件, 每个 Vue 实例都实现了事件接口(Events interface)，即：
+
+使用 $on(eventName) 监听事件
+使用 $emit(eventName) 触发事件
+另外，父组件可以在使用子组件的地方直接用 v-on 来监听子组件触发的事件。
+</code></pre>
+<h3 id="vuejs_2">Vue.js 自定义指令</h3>
+<pre><code class="language-vue">1、除了默认设置的核心指令( v-model 和 v-show ), Vue 也允许注册自定义指令。
+下面我们注册一个全局指令 v-focus, 该指令的功能是在页面加载时，元素获得焦点：
+实例
+&lt;div id=&quot;app&quot;&gt;
+    &lt;p&gt;页面载入时，input 元素自动获取焦点：&lt;/p&gt;
+    &lt;input v-focus&gt;
+&lt;/div&gt;
+&lt;script&gt;
+// 注册一个全局自定义指令 v-focus
+Vue.directive('focus', {
+  // 当绑定元素插入到 DOM 中。
+  inserted: function (el) {
+    // 聚焦元素
+    el.focus()
+  }
+})
+// 创建根实例
+new Vue({
+  el: '#app'
+})
+&lt;/script&gt;
+
+2、我们也可以在实例使用 directives 选项来注册局部指令，这样指令只能在这个实例中使用：
+实例
+&lt;div id=&quot;app&quot;&gt;
+  &lt;p&gt;页面载入时，input 元素自动获取焦点：&lt;/p&gt;
+  &lt;input v-focus&gt;
+&lt;/div&gt;
+&lt;script&gt;
+// 创建根实例
+new Vue({
+  el: '#app',
+  directives: {
+    // 注册一个局部的自定义指令 v-focus
+    focus: {
+      // 指令的定义
+      inserted: function (el) {
+        // 聚焦元素
+        el.focus()
+      }
+    }
+  }
+})
+&lt;/script&gt;
+</code></pre>
+<h3 id="_3">钩子</h3>
+<pre><code>钩子函数
+指令定义函数提供了几个钩子函数（可选）：
+
+bind: 只调用一次，指令第一次绑定到元素时调用，用这个钩子函数可以定义一个在绑定时执行一次的初始化动作。
+
+inserted: 被绑定元素插入父节点时调用（父节点存在即可调用，不必存在于 document 中）。
+
+update: 被绑定元素所在的模板更新时调用，而不论绑定值是否变化。通过比较更新前后的绑定值，可以忽略不必要的模板更新（详细的钩子函数参数见下）。
+
+componentUpdated: 被绑定元素所在模板完成一次更新周期时调用。
+
+unbind: 只调用一次， 指令与元素解绑时调用。
+
+钩子函数参数
+钩子函数的参数有：
+
+el: 指令所绑定的元素，可以用来直接操作 DOM 。
+binding: 一个对象，包含以下属性：
+name: 指令名，不包括 v- 前缀。
+value: 指令的绑定值， 例如： v-my-directive=&quot;1 + 1&quot;, value 的值是 2。
+oldValue: 指令绑定的前一个值，仅在 update 和 componentUpdated 钩子中可用。无论值是否改变都可用。
+expression: 绑定值的表达式或变量名。 例如 v-my-directive=&quot;1 + 1&quot; ， expression 的值是 &quot;1 + 1&quot;。
+arg: 传给指令的参数。例如 v-my-directive:foo， arg 的值是 &quot;foo&quot;。
+modifiers: 一个包含修饰符的对象。 例如： v-my-directive.foo.bar, 修饰符对象 modifiers 的值是 { foo: true, bar: true }。
+vnode: Vue 编译生成的虚拟节点。
+oldVnode: 上一个虚拟节点，仅在 update 和 componentUpdated 钩子中可用。
+</code></pre>
+<h3 id="vuejs_3">vue.js路由</h3>
+<p>Vue.js 路由允许我们通过不同的 URL 访问不同的内容。</p>
+<p>通过 Vue.js 可以实现多视图的单页Web应用（single page web application，SPA）。</p>
+<p>Vue.js 路由需要载入 <a href="https://github.com/vuejs/vue-router">vue-router 库</a></p>
+<p>中文文档地址：<a href="http://router.vuejs.org/zh-cn/">vue-router文档</a>。</p>
+<pre><code class="language-vue">Vue.js + vue-router 可以很简单的实现单页应用。
+&lt;router-link&gt; 是一个组件，该组件用于设置一个导航链接，切换不同 HTML 内容。 to 属性为目标地址， 即要显示的内容。
+以下实例中我们将 vue-router 加进来，然后配置组件和路由映射，再告诉 vue-router 在哪里渲染它们。代码如下所示：
+
+HTML 代码
+&lt;script src=&quot;https://unpkg.com/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/vue-router/dist/vue-router.js&quot;&gt;&lt;/script&gt;
+&lt;div id=&quot;app&quot;&gt;
+  &lt;h1&gt;Hello App!&lt;/h1&gt;
+  &lt;p&gt;
+    &lt;!-- 使用 router-link 组件来导航. --&gt;
+    &lt;!-- 通过传入 `to` 属性指定链接. --&gt;
+    &lt;!-- &lt;router-link&gt; 默认会被渲染成一个 `&lt;a&gt;` 标签 --&gt;
+    &lt;router-link to=&quot;/foo&quot;&gt;Go to Foo&lt;/router-link&gt;
+    &lt;router-link to=&quot;/bar&quot;&gt;Go to Bar&lt;/router-link&gt;
+  &lt;/p&gt;
+  &lt;!-- 路由出口 --&gt;
+  &lt;!-- 路由匹配到的组件将渲染在这里 --&gt;
+  &lt;router-view&gt;&lt;/router-view&gt;
+&lt;/div&gt;
+JavaScript 代码
+// 0. 如果使用模块化机制编程，导入 Vue 和 VueRouter，要调用 Vue.use(VueRouter)
+
+// 1. 定义（路由）组件。
+// 可以从其他文件 import 进来
+const Foo = { template: '&lt;div&gt;foo&lt;/div&gt;' }
+const Bar = { template: '&lt;div&gt;bar&lt;/div&gt;' }
+
+// 2. 定义路由
+// 每个路由应该映射一个组件。 其中&quot;component&quot; 可以是
+// 通过 Vue.extend() 创建的组件构造器，
+// 或者，只是一个组件配置对象。
+// 我们晚点再讨论嵌套路由。
+const routes = [
+  { path: '/foo', component: Foo },
+  { path: '/bar', component: Bar }
+]
+
+// 3. 创建 router 实例，然后传 `routes` 配置
+// 你还可以传别的配置参数, 不过先这么简单着吧。
+const router = new VueRouter({
+  routes // （缩写）相当于 routes: routes
+})
+
+// 4. 创建和挂载根实例。
+// 记得要通过 router 配置参数注入路由，
+// 从而让整个应用都有路由功能
+const app = new Vue({
+  router
+}).$mount('#app')
+
+// 现在，应用已经启动了！
 </code></pre>
                 
               
