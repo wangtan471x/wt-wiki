@@ -402,3 +402,28 @@ Python中注释代码是在前面加 #
 
 ubuntu安装gitlab：[https://www.cnblogs.com/shawWey/p/12020637.html](https://www.cnblogs.com/shawWey/p/12020637.html)
 
+### Docker
+
+软件定义数据中心
+
+软件定义计算
+
+软件定义网络
+
+软件定义存储
+
+ 
+
+Docker
+
+Docker img-镜像
+
+Docker Engine 
+
+Images-环境（docker-hub）
+
+Container-容器
+
+Repositories-仓库
+
+Docker Hub
