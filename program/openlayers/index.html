@@ -14,7 +14,7 @@
     
     
       
-        <title>电波模型 - wt-wiki</title>
+        <title>Openlayers - wt-wiki</title>
       
     
     
@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#wkt" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +90,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              电波模型
+              Openlayers
             
           </span>
         </div>
@@ -292,7 +292,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../program/Qt-Qml/" class="md-nav__link">
+      <a href="../Qt-Qml/" class="md-nav__link">
         Qt
       </a>
     </li>
@@ -304,7 +304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../program/python/" class="md-nav__link">
+      <a href="../python/" class="md-nav__link">
         Python
       </a>
     </li>
@@ -316,7 +316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../program/Leetcode/" class="md-nav__link">
+      <a href="../Leetcode/" class="md-nav__link">
         Leetcode
       </a>
     </li>
@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../program/pyside2/" class="md-nav__link">
+      <a href="../pyside2/" class="md-nav__link">
         Pyside2
       </a>
     </li>
@@ -340,7 +340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../program/sql/" class="md-nav__link">
+      <a href="../sql/" class="md-nav__link">
         SQL
       </a>
     </li>
@@ -402,14 +402,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" >
       
       <label class="md-nav__link" for="nav-7">
         办公
@@ -426,45 +424,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          电波模型
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../work/radio/" class="md-nav__link">
         电波模型
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    电波传播模型
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -498,8 +462,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#wkt" class="md-nav__link">
+    处理WKT格式字符串
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geojson" class="md-nav__link">
+    处理Geojson格式字符串
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openlayerswkt" class="md-nav__link">
+    openlayers获取WKT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openlayersfeaturewktfeature" class="md-nav__link">
+    Openlayers中Feature与WKT之间的转换，Feature坐标系的转换
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    电波传播模型
+    获取矢量坐标点
   </a>
   
 </li>
@@ -517,16 +509,87 @@
               
                 
                 
-                  <h1>电波模型</h1>
+                  <h1>Openlayers</h1>
                 
-                <h4 id="_1">电波传播模型</h4>
-<p><a href="http://www.srrc.org.cn/spreadmodel/">国际电联P系列建议书</a></p>
-<p>干扰种类</p>
-<p>瞄准：定频
-拦阻：针对跳频信号，工作带宽干扰（梳状普），守株待兔方式的
-阻塞：噪声，
-跟踪：有侦察引导，通过自动跳频、换频实现干扰
-欺骗：类似伪基站，破解了信号调制及解码，发相同的信号，这个是最高级别的干扰</p>
+                <h3 id="wkt">处理WKT格式字符串</h3>
+<pre><code class="language-javascript">    var format = new ol.format.WKT();
+    var feature = format.readFeature(wktData, {
+        dataProjection: 'EPSG:4326',
+        featureProjection: 'EPSG:3857'
+    });
+    var vector = new ol.layer.Vector({
+        source: new ol.source.Vector({
+            features: [feature]
+        })
+    });
+    map_js.map.addLayer(vector);
+</code></pre>
+<h3 id="geojson">处理Geojson格式字符串</h3>
+<pre><code class="language-javascript">var splitfeature = new ol.format.GeoJSON().readFeature(('GeoJSON字符串'), {
+    featureProjection: 'EPSG:4326' //当前坐标系
+});
+vectorSource.addFeature(splitfeature);
+
+</code></pre>
+<h3 id="openlayerswkt">openlayers获取WKT</h3>
+<p>​   https://blog.csdn.net/weixin_42547014/article/details/109234988</p>
+<p>前提：明确矢量图形的feature</p>
+<pre><code class="language-javascript">//WKT
+var wktshape = new ol.format.WKT().writeFeature(editorSource.getFeatures()[0]);
+
+//GeoJSON
+var jsonshape = new ol.format.GeoJSON().writeFeature(editorSource.getFeatures()[0]);
+</code></pre>
+<p>【获取刚刚画完的】</p>
+<pre><code class="language-javascript">//新建draw对象
+var draw = new ol.interaction.Draw({
+     source: editorSource,  //图层的source
+     Type: 'LineString'    //图层类型'Point'/'LineString'/'Polygon'
+});
+draw.on('drawend', function(event) {
+    if (event.feature) {
+        vectorSource.addFeature(event.feature);
+        console.log((event.feature.getGeometry().getCoordinates()).toString())
+        var Coordinates = new ol.format.GeoJSON().writeFeature(event.feature);
+        var positionList = new ol.format.WKT().writeFeature(event.feature);
+    }
+    map.removeInteraction(draw);
+});
+// 将Draw绘图控件加入Map对象
+map.addInteraction(draw);
+</code></pre>
+<h3 id="openlayersfeaturewktfeature">Openlayers中Feature与WKT之间的转换，Feature坐标系的转换</h3>
+<p>**</p>
+<pre><code class="language-javascript">一、Feature 转WKT 且带坐标系的转换**spa
+
+   var strwkt = new ol.format.WKT().writeFeature(feature, {
+        dataProjection: targetcrs,//目标坐标系
+        featureProjection:crs //当前坐标系
+      });orm
+
+ **二、WKT转Feature** get
+
+ var newfeature = new ol.format.WKT().readFeature(strwkt);it
+
+**三、Feature 坐标系转换（支持全部图形）**io
+
+ var geom = feature.getGeometry().transform(crs, targetcrs);
+ feature.setGeometry(geom);form
+
+**四、利用WKT转换Feature坐标系（这种不支持GEOMETRY不为Circle）**class
+
+ var strwkt = new ol.format.WKT().writeFeature(feature, {
+        dataProjection: targetcrs,
+        featureProjection:crs
+      });
+      var newfeature = new ol.format.WKT().readFeature(strwkt);transform
+
+注意：方法4获得的Feature 会没有原始Feature对应的Properties
+</code></pre>
+<h3 id="_1">获取矢量坐标点</h3>
+<pre><code>从map.layers数组中获取图层实例（OpenLayers.Layer.Vector）。遍历layer.features中的features（OpenLayers.Feature.Vector）。使用feature.geometry访问要素的几何（OpenLayers.Geometry）。这可以是任何类型的几何。
+对于line，类型为OpenLayers.Geometry.LineString。使用getVertices函数获取行中所有点（OpenLayer.Geometry.Point）的数组。
+</code></pre>
                 
               
               
@@ -541,27 +604,6 @@
       
         
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-        
-          <a href="../../video/mashibing/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-            </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                马士兵
-              </div>
-            </div>
-          </a>
-        
-        
-      </nav>
-    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
