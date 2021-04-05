@@ -12,6 +12,11 @@ nav:
         - Leetcode: program/Leetcode.md
         - Pyside2: program/pyside2.md
         - SQL: program/sql.md
+        - SpringBoot: program/SpringBoot.md
+        - Openlayers: program/openlayers.md
+        - Postgre: program/Postgre.md
+        - TensorFlow: program/TensorFlow.md
+        - Vue: program/Vue.md
     - 视频课程: 
         - 马士兵: video/mashibing.md
     - 办公: 
