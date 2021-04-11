@@ -14,7 +14,7 @@
     
     
       
-        <title>TensorFlow - wt-wiki</title>
+        <title>编程规范 - wt-wiki</title>
       
     
     
@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#git" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +90,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              TensorFlow
+              编程规范
             
           </span>
         </div>
@@ -388,45 +388,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          TensorFlow
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../TensorFlow/" class="md-nav__link">
         TensorFlow
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    资料
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -446,11 +412,114 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../specification/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          编程规范
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         编程规范
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    Git提交日志
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commit-message" class="md-nav__link">
+    一、Commit message 的作用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commit-message_1" class="md-nav__link">
+    二、Commit message 的格式
+  </a>
+  
+    <nav class="md-nav" aria-label="二、Commit message 的格式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-header" class="md-nav__link">
+    2.1 Header
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-body" class="md-nav__link">
+    2.2 Body
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-footer" class="md-nav__link">
+    2.3 Footer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-revert" class="md-nav__link">
+    2.4 Revert
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commitizen" class="md-nav__link">
+    三、Commitizen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validate-commit-msg" class="md-nav__link">
+    四、validate-commit-msg
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-log" class="md-nav__link">
+    五、生成 Change log
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -570,8 +639,77 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    资料
+  <a href="#git" class="md-nav__link">
+    Git提交日志
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commit-message" class="md-nav__link">
+    一、Commit message 的作用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commit-message_1" class="md-nav__link">
+    二、Commit message 的格式
+  </a>
+  
+    <nav class="md-nav" aria-label="二、Commit message 的格式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-header" class="md-nav__link">
+    2.1 Header
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-body" class="md-nav__link">
+    2.2 Body
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-footer" class="md-nav__link">
+    2.3 Footer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-revert" class="md-nav__link">
+    2.4 Revert
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commitizen" class="md-nav__link">
+    三、Commitizen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validate-commit-msg" class="md-nav__link">
+    四、validate-commit-msg
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-log" class="md-nav__link">
+    五、生成 Change log
   </a>
   
 </li>
@@ -589,12 +727,140 @@
               
                 
                 
-                  <h1>TensorFlow</h1>
+                  <h1>编程规范</h1>
                 
-                <h3 id="_1">资料</h3>
-<p>学习社区<a href="https://tensorflow.google.cn/">https://tensorflow.google.cn/</a></p>
-<p>机器学习与tensorflow入门教程<a href="https://blog.csdn.net/ebzxw/article/details/86609997">https://blog.csdn.net/ebzxw/article/details/86609997</a></p>
-<p>机器学习超参数优化算法-Hyperband<a href="https://www.imooc.com/article/269113">https://www.imooc.com/article/269113</a></p>
+                <h3 id="git">Git提交日志</h3>
+<h2 id="commit-message">一、Commit message 的作用</h2>
+<p>格式化的Commit message，有几个好处。</p>
+<p><strong>（1）提供更多的历史信息，方便快速浏览。</strong></p>
+<p>比如，下面的命令显示上次发布后的变动，每个commit占据一行。你只看行首，就知道某次 commit 的目的。</p>
+<pre><code class="language-text">$ git log &lt;last tag&gt; HEAD --pretty=format:%s
+</code></pre>
+<p><img alt="img" src="https://pic3.zhimg.com/80/v2-04b1e2286d90872eecce1a83d71bca32_720w.jpg" /></p>
+<p><strong>（2）可以过滤某些commit（比如文档改动），便于快速查找信息。</strong></p>
+<p>比如，下面的命令仅仅显示本次发布新增加的功能。</p>
+<blockquote>
+<p>$ git log <last release> HEAD --grep feature</p>
+</blockquote>
+<p><strong>（3）可以直接从commit生成Change log。</strong></p>
+<p>Change Log 是发布新版本时，用来说明与上一个版本差异的文档，详见后文。</p>
+<p><img alt="img" src="https://pic1.zhimg.com/80/v2-1b5338df1960c2617b22bd55ca6f7538_720w.jpg" /></p>
+<h2 id="commit-message_1">二、Commit message 的格式</h2>
+<p>每次提交，Commit message 都包括三个部分：Header，Body 和 Footer。</p>
+<blockquote>
+<p><type>(<scope>): <subject> // 空一行 <body> // 空一行 <footer></p>
+</blockquote>
+<p>其中，Header 是必需的，Body 和 Footer 可以省略。</p>
+<p>不管是哪一个部分，任何一行都不得超过72个字符（或100个字符）。这是为了避免自动换行影响美观。</p>
+<h3 id="21-header">2.1 Header</h3>
+<p>Header部分只有一行，包括三个字段：<code>type</code>（必需）、<code>scope</code>（可选）和<code>subject</code>（必需）。</p>
+<p><strong>（1）type</strong></p>
+<p><code>type</code>用于说明 commit 的类别，只允许使用下面7个标识。</p>
+<ul>
+<li>feat：新功能（feature）</li>
+<li>fix：修补bug</li>
+<li>docs：文档（documentation）</li>
+<li>style： 格式（不影响代码运行的变动）</li>
+<li>refactor：重构（即不是新增功能，也不是修改bug的代码变动）</li>
+<li>test：增加测试</li>
+<li>chore：构建过程或辅助工具的变动</li>
+</ul>
+<p>如果<code>type</code>为<code>feat</code>和<code>fix</code>，则该 commit 将肯定出现在 Change log 之中。其他情况（<code>docs</code>、<code>chore</code>、<code>style</code>、<code>refactor</code>、<code>test</code>）由你决定，要不要放入 Change log，建议是不要。</p>
+<p><strong>（2）scope</strong></p>
+<p><code>scope</code>用于说明 commit 影响的范围，比如数据层、控制层、视图层等等，视项目不同而不同。</p>
+<p><strong>（3）subject</strong></p>
+<p><code>subject</code>是 commit 目的的简短描述，不超过50个字符。</p>
+<ul>
+<li>以动词开头，使用第一人称现在时，比如<code>change</code>，而不是<code>changed</code>或<code>changes</code></li>
+<li>第一个字母小写</li>
+<li>结尾不加句号（<code>.</code>）</li>
+</ul>
+<h3 id="22-body">2.2 Body</h3>
+<p>Body 部分是对本次 commit 的详细描述，可以分成多行。下面是一个范例。</p>
+<blockquote>
+<p>More detailed explanatory text, if necessary. Wrap it to about 72 characters or so. Further paragraphs come after blank lines. - Bullet points are okay, too - Use a hanging indent</p>
+</blockquote>
+<p>有两个注意点。</p>
+<p>（1）使用第一人称现在时，比如使用<code>change</code>而不是<code>changed</code>或<code>changes</code>。</p>
+<p>（2）应该说明代码变动的动机，以及与以前行为的对比。</p>
+<h3 id="23-footer">2.3 Footer</h3>
+<p>Footer 部分只用于两种情况。</p>
+<p><strong>（1）不兼容变动</strong></p>
+<p>如果当前代码与上一个版本不兼容，则 Footer 部分以<code>BREAKING CHANGE</code>开头，后面是对变动的描述、以及变动理由和迁移方法。</p>
+<p>BREAKING CHANGE: isolate scope bindings definition has changed.</p>
+<p>To migrate the code follow the example below:</p>
+<p>Before:</p>
+<p>scope: {
+myAttr: 'attribute',
+}</p>
+<p>After:</p>
+<p>scope: {
+myAttr: '@',
+}</p>
+<p>The removed <code>inject</code> wasn't generaly useful for directives so there should be no code using it.</p>
+<p><strong>（2）关闭 Issue</strong></p>
+<p>如果当前 commit 针对某个issue，那么可以在 Footer 部分关闭这个 issue 。</p>
+<blockquote>
+<p>Closes #234</p>
+</blockquote>
+<p>也可以一次关闭多个 issue 。</p>
+<blockquote>
+<p>Closes #123, #245, #992</p>
+</blockquote>
+<h3 id="24-revert">2.4 Revert</h3>
+<p>还有一种特殊情况，如果当前 commit 用于撤销以前的 commit，则必须以<code>revert:</code>开头，后面跟着被撤销 Commit 的 Header。</p>
+<blockquote>
+<p>revert: feat(pencil): add 'graphiteWidth' option This reverts commit 667ecc1654a317a13331b17617d973392f415f02.</p>
+</blockquote>
+<p>Body部分的格式是固定的，必须写成<code>This reverts commit &lt;hash&gt;.</code>，其中的<code>hash</code>是被撤销 commit 的 SHA 标识符。</p>
+<p>如果当前 commit 与被撤销的 commit，在同一个发布（release）里面，那么它们都不会出现在 Change log 里面。如果两者在不同的发布，那么当前 commit，会出现在 Change log 的<code>Reverts</code>小标题下面。</p>
+<h2 id="commitizen">三、Commitizen</h2>
+<p><a href="https://link.zhihu.com/?target=https%3A//github.com/commitizen/cz-cli">Commitizen</a>是一个撰写合格 Commit message 的工具。</p>
+<p>安装命令如下。</p>
+<pre><code class="language-text">$ npm install -g commitizen
+</code></pre>
+<p>然后，在项目目录里，运行下面的命令，使其支持 Angular 的 Commit message 格式。</p>
+<blockquote>
+<p>$ commitizen init cz-conventional-changelog --save --save-exact</p>
+</blockquote>
+<p>以后，凡是用到<code>git commit</code>命令，一律改为使用<code>git cz</code>。这时，就会出现选项，用来生成符合格式的 Commit message。</p>
+<p><img alt="img" src="https://pic1.zhimg.com/80/v2-4d96a62543505514e0b75430956737b0_720w.jpg" /></p>
+<h2 id="validate-commit-msg">四、validate-commit-msg</h2>
+<p><a href="https://link.zhihu.com/?target=https%3A//github.com/kentcdodds/validate-commit-msg">validate-commit-msg</a> 用于检查 Node 项目的 Commit message 是否符合格式。</p>
+<p>它的安装是手动的。首先，拷贝下面这个<a href="https://link.zhihu.com/?target=https%3A//github.com/kentcdodds/validate-commit-msg/blob/master/index.js">JS文件</a>，放入你的代码库。文件名可以取为<code>validate-commit-msg.js</code>。</p>
+<p>接着，把这个脚本加入 Git 的 hook。下面是在<code>package.json</code>里面使用 <a href="https://link.zhihu.com/?target=http%3A//npm.im/ghooks">ghooks</a>，把这个脚本加为<code>commit-msg</code>时运行。</p>
+<blockquote>
+<p>"config": { "ghooks": { "commit-msg": "./validate-commit-msg.js" } }</p>
+</blockquote>
+<p>然后，每次<code>git commit</code>的时候，这个脚本就会自动检查 Commit message 是否合格。如果不合格，就会报错。</p>
+<blockquote>
+<p>$ git add -A $ git commit -m "edit markdown" INVALID COMMIT MSG: does not match "<type>(<scope>): <subject>" ! was: edit markdown</p>
+</blockquote>
+<h2 id="change-log">五、生成 Change log</h2>
+<p>如果你的所有 Commit 都符合 Angular 格式，那么发布新版本时， Change log 就可以用脚本自动生成（<a href="https://link.zhihu.com/?target=https%3A//github.com/ajoslin/conventional-changelog/blob/master/CHANGELOG.md">例1</a>，<a href="https://link.zhihu.com/?target=https%3A//github.com/karma-runner/karma/blob/master/CHANGELOG.md">例2</a>，<a href="https://link.zhihu.com/?target=https%3A//github.com/btford/grunt-conventional-changelog/blob/master/CHANGELOG.md">例3</a>）。</p>
+<p>生成的文档包括以下三个部分。</p>
+<ul>
+<li>New features</li>
+<li>Bug fixes</li>
+<li>Breaking changes.</li>
+</ul>
+<p>每个部分都会罗列相关的 commit ，并且有指向这些 commit 的链接。当然，生成的文档允许手动修改，所以发布前，你还可以添加其他内容。</p>
+<p><a href="https://link.zhihu.com/?target=https%3A//github.com/ajoslin/conventional-changelog">conventional-changelog</a> 就是生成 Change log 的工具，运行下面的命令即可。</p>
+<blockquote>
+<p>$ npm install -g conventional-changelog $ cd my-project $ conventional-changelog -p angular -i CHANGELOG.md -w</p>
+</blockquote>
+<p>上面命令不会覆盖以前的 Change log，只会在<code>CHANGELOG.md</code>的头部加上自从上次发布以来的变动。</p>
+<p>如果你想生成所有发布的 Change log，要改为运行下面的命令。</p>
+<pre><code class="language-text">$ conventional-changelog -p angular -i CHANGELOG.md -w -r 0
+</code></pre>
+<p>为了方便使用，可以将其写入<code>package.json</code>的<code>scripts</code>字段。</p>
+<pre><code class="language-text">{ &quot;scripts&quot;: { &quot;changelog&quot;: &quot;conventional-changelog -p angular -i CHANGELOG.md -w -r 0&quot; } }
+</code></pre>
+<p>以后，直接运行下面的命令即可。</p>
+<pre><code class="language-text">$ npm run changelog
+</code></pre>
+<p><strong>参考文献：</strong></p>
+<p>转载自阮老师<a href="https://link.zhihu.com/?target=http%3A//www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html">Commit message 和 Change log 编写指南</a></p>
                 
               
               
@@ -613,7 +879,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../Postgre/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../Vue/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -622,19 +888,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Postgre
+                Vue
               </div>
             </div>
           </a>
         
         
-          <a href="../Vue/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../video/mashibing/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Vue
+                马士兵
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
