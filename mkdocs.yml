@@ -17,6 +17,7 @@ nav:
         - Postgre: program/Postgre.md
         - TensorFlow: program/TensorFlow.md
         - Vue: program/Vue.md
+        - 编程规范: program/specification.md
     - 视频课程: 
         - 马士兵: video/mashibing.md
     - 办公: 
