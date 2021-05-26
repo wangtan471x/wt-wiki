@@ -14,7 +14,7 @@
     
     
       
-        <title>SpringBoot - wt-wiki</title>
+        <title>C# - wt-wiki</title>
       
     
     
@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#springbootupdate" class="md-skip">
+        <a href="#c-websocket" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +90,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              SpringBoot
+              C#
             
           </span>
         </div>
@@ -352,79 +352,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          SpringBoot
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../SpringBoot/" class="md-nav__link">
         SpringBoot
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#springbootupdate" class="md-nav__link">
-    springboot中@update使用
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#springbootlocaldatetime" class="md-nav__link">
-    Springboot传参中对LocalDateTime的支持
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    1. 说明
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-requestbody" class="md-nav__link">
-    2. 格式化@RequestBody时间
-  </a>
-  
-    <nav class="md-nav" aria-label="2. 格式化@RequestBody时间">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#springbootdata" class="md-nav__link">
-    springboot使用@data注解，减少不必要代码
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -480,11 +412,52 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../C%23/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          C#
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         C#
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#c-websocket" class="md-nav__link">
+    C# Websocket
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#byte" class="md-nav__link">
+    byte转换
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -616,43 +589,16 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#springbootupdate" class="md-nav__link">
-    springboot中@update使用
+  <a href="#c-websocket" class="md-nav__link">
+    C# Websocket
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#springbootlocaldatetime" class="md-nav__link">
-    Springboot传参中对LocalDateTime的支持
+  <a href="#byte" class="md-nav__link">
+    byte转换
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    1. 说明
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-requestbody" class="md-nav__link">
-    2. 格式化@RequestBody时间
-  </a>
-  
-    <nav class="md-nav" aria-label="2. 格式化@RequestBody时间">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#springbootdata" class="md-nav__link">
-    springboot使用@data注解，减少不必要代码
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -669,41 +615,30 @@
               
                 
                 
-                  <h1>SpringBoot</h1>
+                  <h1>C#</h1>
                 
-                <h3 id="springbootupdate">springboot中@update使用</h3>
-<p>@update使用的两种情况
-1.第一种情况
-update操作传递一个参数</p>
-<p>@Update(“update user set sex = “男” where id=#{id}”)
-public int update(int id);</p>
-<p>这种情况只有一个参数，参数id可以不用使用@param</p>
-<p>2.第二种情况
-update操作传递两个及以上参数</p>
-<p>@Update(“update user set name =#{name} where id=#{id}”)
-public int update(@Param(“id”) int id,@Param(“name”) String name);</p>
-<p>这种情况有两个参数，需要使用@Param进行对两个参数进行区分，否则，在操作数据表时会报sql语句有注入风险。</p>
-<p>使用SpringBoot实现文件的上传 https://www.cnblogs.com/kzyuan/p/12482841.html</p>
-<h3 id="springbootlocaldatetime">Springboot传参中对LocalDateTime的支持</h3>
-<p>网址：https://blog.csdn.net/fangyana/article/details/105492397</p>
-<h2 id="1">1. 说明</h2>
-<p>对于<code>@RequestBody</code>注解，<code>Springboot</code>默认使用<code>Jackson</code>实现<code>json</code>字符串和<code>java</code>对象之间的转换（序列化和反序列化）；也可进行修改使用阿里的<code>fastjson</code>（本文不介绍），<code>Jackson</code>不支持<code>LocalDateTime</code>与格式<code>yyyy-MM-dd HH:mm:ss</code>之间的转换，需要自定义转换。</p>
-<p>对于<code>@RequestParam</code>注解，需要自定义转换器。</p>
-<h2 id="2-requestbody">2. 格式化@RequestBody时间</h2>
-<p>a) 方法1</p>
-<p>直接在类成员变量上加注解进行转换（注意时区），只对单个类有效。<code>LocalDate</code>、<code>LocalTime</code>类似。</p>
-<pre><code>@DateTimeFormat(pattern = &quot;yyyy-MM-dd HH:mm:ss&quot;)
-
-
-
-@JsonFormat(pattern = &quot;yyyy-MM-dd HH:mm:ss&quot;, timezone = &quot;GMT+8&quot;)
-
-
-
-private LocalDateTime time
-</code></pre>
-<h3 id="springbootdata">springboot使用@data注解，减少不必要代码</h3>
-<p>https://blog.csdn.net/qq_37433657/article/details/83275051</p>
+                <h2 id="c-websocket">C# Websocket</h2>
+<p>关于ClientWebSocket的异步转同步，我把这个项目搬出来，讲讲清楚</p>
+<p>https://bbs.csdn.net/topics/392327427</p>
+<p>基于C#net4.5websocket客户端与服务端</p>
+<p>https://www.cnblogs.com/yanglang/p/9695883.html</p>
+<p>C# ClientWebSocket使用详细</p>
+<p>https://blog.csdn.net/chinaherolts2008/article/details/111069657</p>
+<p>ClientWebSocket 类</p>
+<p>https://docs.microsoft.com/zh-cn/dotnet/api/system.net.websockets.clientwebsocket?view=net-5.0</p>
+<p>基于C#net4.5websocket客户端与服务端</p>
+<p>https://www.cnblogs.com/yanglang/p/9695883.html</p>
+<p>C# 彻底搞懂async/await</p>
+<p>https://www.cnblogs.com/zhaoshujie/p/11192036.html</p>
+<h2 id="byte">byte转换</h2>
+<p>https://blog.csdn.net/u012667093/article/details/56835530
+https://blog.csdn.net/gaofang2009/article/details/6695101?utm_medium=distribute.pc_relevant_download.none-task-blog-baidujs-1.nonecase&amp;depth_1-utm_source=distribute.pc_relevant_download.none-task-blog-baidujs-1.nonecase</p>
+<p>https://bbs.csdn.net/topics/392426509</p>
+<p>https://blog.csdn.net/newbie_xymt/article/details/73609980?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&amp;spm=1001.2101.3001.4242https://blog.csdn.net/liaoxueli/article/details/83361876?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.control</p>
+<p>https://blog.csdn.net/weixin_36238568/article/details/111985969?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&amp;spm=1001.2101.3001.4242</p>
+<p>https://blog.csdn.net/weixin_34381666/article/details/93754743</p>
+<p>https://www.cnblogs.com/ldyblogs/p/Byte.html</p>
+<p>https://blog.csdn.net/whd0310/article/details/45071041?utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.control&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.control</p>
                 
               
               
@@ -722,7 +657,7 @@ private LocalDateTime time
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../sql/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../Vue/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -731,19 +666,19 @@ private LocalDateTime time
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                SQL
+                Vue
               </div>
             </div>
           </a>
         
         
-          <a href="../openlayers/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../specification/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Openlayers
+                编程规范
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
