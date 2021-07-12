@@ -22,5 +22,6 @@ nav:
         - 马士兵: video/mashibing.md
     - 办公: 
         - 电波模型: work/radio.md
+        - 雷达知识: work/Radar.md
 theme:
   name: 'material'
